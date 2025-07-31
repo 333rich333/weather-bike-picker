@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+
+    <script src="eel.js"></script>
+      <script>
+      function callPython() {
+        eel.say_hello_py();
+      }
+      function addText(text) {
+        var div = document.getElementById("content");
+        div.innerHTML += "<br>" + text;
+      }
+      eel.expose(addText);
+
+      function compute() {
+        var textbox = document.getElementById("input");
+        text = textbox.value;
+        eel.sort(text);
+      }
+
+      eel.expose(showAnswers);
+      function showAnswers(answer){
+        var outputDiv = document.getElementById("result");
+        outputDiv.innerHTML = "Result: " + answer;
+      }
+        function displayName() {
+            const name = document.getElementById('name').value;
+
+            // Display the name in the paragraph with id "nameOutput"
+            document.getElementById('nameOutput').innerHTML = `Hello, ${name}!`;
+        }
+
+    </script>
+  </head>
+
+  <body>
+    <h1>Beep Boop</h1>
+    <button onclick="callPython()">CLICKING</button>
+    <p>Text:</p>
+    <button onclick="content">Time_Get</button>
+    <div id="content"></div>
+
+  <div id="input"></div>
+  <div id="result"></div>
+
+    <form id="userInputForm">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <button type="button" onclick="displayName()">Submit</button>
+    </form>
+
+    <h2>Your Name:</h2>
+    <p id="nameOutput"></p>
+
+  </body>
+</html>

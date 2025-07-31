@@ -1,0 +1,50 @@
+  {
+      "wind": {
+      "min_speed": 15,
+      "max_speed": 15,
+      "unit": "mph",
+      "condition": [
+        "none",
+        "light",
+        "gentle",
+        "moderate",
+        "strong",
+        "storm"
+      ],
+      "intensity": "light"
+      },
+    "rain": {
+      "condition": [
+        "none",
+        "light",
+        "gentle",
+        "moderate",
+        "strong",
+        "storm"
+      ],
+      "intensity": "light",
+      "probabilityOfPrecipitation": 10
+    },
+    "temperature": {
+        "min_temp": -270,
+        "max_temp": -270,
+        "temperatureUnit": "F"
+    },
+    "data_up_to_date": "no",
+    "user_configurations": {
+      "wind_grom_max": 12,
+      "wind_saber_max": 20,
+      "rain_max": "light",
+      "probabilityOfPrecipitation": 70,
+      "heat_max": 105,
+      "cold_min": 40,
+      "time_start": 500,
+      "time_end": 2200
+    },
+    "vehicle_options": [
+      "grom",
+      "cruiser",
+      "car"
+    ],
+    "vehicle": "none"
+  }
