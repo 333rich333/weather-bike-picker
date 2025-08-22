@@ -6,6 +6,10 @@ import time
 from data_handling import check_if_site_is_up, checkWindSpeed, request_data, checkRain, checkTemperature, find_today, \
         print_info
 
+#
+def third_print_data(config_data):
+    print("hi")
+
 
 # Output: 3 Json files, this should only be run every 10-60 minutes at the earliest (minimize API calls)
 def first_get_data():
@@ -20,10 +24,13 @@ def first_get_data():
     request_data()
 
 
-def third_print_data(config_data):
-    print("hi")
-
-
+#Input: Config json
+#       Forecast Json (From first_get_data())
+#       Forecast Hourly Json (From first_get_data())
+#Output: Forecast Json updated
+#       Forecast Hourly Json updated
+#       Config Json Updated (Vehicle Chosen)
+#       ERROR: False if there is no date data for today
 def second_interpret_data():
     print("hi")
     # Import JSON: forecast & config
@@ -56,7 +63,7 @@ def second_interpret_data():
         config_data["vehicle"] = config_data["vehicle_options"][2]  # car
     elif config_data["wind"]["max_speed"] < config_data["user_configurations"]["wind_grom_max"]:
         config_data["vehicle"] = config_data["vehicle_options"][0]  # grom
-    elif config_data["wind"]["max_speed"] < config_data["user_configurations"]["wind_saber_max"]:
+    elif config_data["wind"]["max_speed"] < config_data["user_configurations"]["wind_cruiser_max"]:
         config_data["vehicle"] = config_data["vehicle_options"][1]  # cruiser
     else:
         config_data["vehicle"] = config_data["vehicle_options"][2]  # car default
@@ -71,8 +78,8 @@ def second_interpret_data():
     third_print_data(config_data)
     return True
 
-first_get_data()
-#second_interpret_data()
+#first_get_data()
+second_interpret_data()
 
 
 def killSwitch():

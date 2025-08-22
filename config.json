@@ -1,7 +1,7 @@
   {
       "wind": {
-      "min_speed": 15,
-      "max_speed": 15,
+      "min_speed": -1,
+      "max_speed": -1,
       "unit": "mph",
       "condition": [
         "none",
@@ -23,17 +23,17 @@
         "storm"
       ],
       "intensity": "light",
-      "probabilityOfPrecipitation": 10
+      "probabilityOfPrecipitation": 3
     },
     "temperature": {
-        "min_temp": -270,
-        "max_temp": -270,
+        "min_temp": -3,
+        "max_temp": -3,
         "temperatureUnit": "F"
     },
     "data_up_to_date": "no",
     "user_configurations": {
       "wind_grom_max": 12,
-      "wind_saber_max": 20,
+      "wind_cruiser_max": 20,
       "rain_max": "light",
       "probabilityOfPrecipitation": 70,
       "heat_max": 105,
